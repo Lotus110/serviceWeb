@@ -246,15 +246,15 @@ body {
   .form .form-field, .buy .text.form .form-field, .buy .contactinfo.form .form-field {
     position: relative;
     display: table;
-    border-collapse: separate;
-    width: 100%; }
+    width: 100%;
+    overflow: hidden; }
     .form .form-field .input {
       font-size: 0.2201rem;
       color: #949292;
       height: 0.7rem;
       line-height: 0.7rem;
       margin: 0 auto;
-      padding: 0.22rem 0.27rem;
+      padding: 0 0.27rem;
       width: 100%;
       display: block;
       box-sizing: border-box; }
@@ -273,12 +273,12 @@ body {
     .form .form-field.form-phone {
       border-top-right-radius: 4px;
       border: 1px solid #ccc;
-      border-top-left-radius: 4px;
-      border-bottom: none; }
+      border-top-left-radius: 4px; }
     .form .form-field.form-code {
       border-bottom-right-radius: 4px;
       border: 1px solid #ccc;
-      border-bottom-left-radius: 4px; }
+      border-bottom-left-radius: 4px;
+      border-top: none; }
   .form .btn, .buy .text.form .btn, .buy .contactinfo.form .btn {
     margin-top: 0.9rem;
     font-size: 0.2601rem;
@@ -517,19 +517,25 @@ body {
   right: 0;
   z-index: 9; }
   .nav-bar ul {
+    flex-direction: row;
     display: -webkit-flex;
     display: flex;
-    justify-content: space-around; }
-    .nav-bar ul a {
-      display: block;
-      height: 100%;
-      padding: 0 0.1rem;
-      box-sizing: border-box;
-      font-size: 0.2401rem;
-      color: #a1a1a1; }
-      .nav-bar ul a:active, .nav-bar ul a.active {
-        color: #52b35e;
-        border-bottom: 3px solid #52b35e; }
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    .nav-bar ul li {
+      flex: 1;
+      text-align: center;
+      display: flex;
+      flex-direction: column; }
+      .nav-bar ul li a {
+        display: block;
+        height: 100%;
+        box-sizing: border-box;
+        font-size: 0.2401rem;
+        color: #a1a1a1; }
+        .nav-bar ul li a:active, .nav-bar ul li a.active {
+          color: #52b35e;
+          border-bottom: 3px solid #52b35e; }
 
 .activity {
   padding-top: 0.66rem;
