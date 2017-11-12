@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="./css/common.css">
+	<script src="./js/jquery-3.2.1.min.js"></script>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 6.4 + 'px';
+	</script>
+</head>
+<body>
+	<nav class="bar bar-tab">
+		<a class="btn" href="#">
+			<span class="total">30</span>
+		</a>
+		<a class="btn btn-buy" href="#">
+			立即购买
+		</a>
+	</nav>
+	<div class="page">
+		<div class="content index">
+			<div class="banner">
+				<img src="../images/banner.png">
+			</div>
+			<div class="item">
+				<div class="name">
+					【198服务年卡】水电维修会员服务卡198服务年卡水电维修会员服务卡
+				</div>
+				<div class="price">
+					<span class="total">30</span>每次
+				</div>
+			</div>
+			<div class="item">
+				<div class="item-sub">
+					<div class="title">购买须知</div>
+					<div class="introduce">购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知</div>
+				</div>
+				<div class="item-sub">
+					<div class="title">购买须知</div>
+					<div class="introduce">购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知购买须知</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="dialog">
+		<div class="con">
+			<div class="tip">
+				亲，对不起！此服务只针对年卡会员开通购买198元年卡享
+			</div>
+			<ul class="list">
+				<li><span class="rhombus"></span>水电维修：免费一次</li>
+				<li><span class="rhombus"></span>电脑维修：免费一次</li>
+				<li><span class="rhombus"></span>网络直播：免费一次</li>
+			</ul>
+		</div>
+		<a href="#" class="btn btn-ok">确定（了解年卡服务）</a>
+		<a href="#" class="btn btn-login">年卡会员，请登录</a>
+	</div>
+	<div class="dialog-bg"></div>
+</body>
+</html>
+<script type="text/javascript">
+	/*弹出已选商品*/
+    var dialog = $('.dialog');
+    var bodyH = $('body').height();
+    $('.btn-buy').click(function(){
+    	var top = (bodyH - dialog.height())/2;
+    	var dialogH = bodyH - 60;
+    	if(top <= 30){
+    		dialog.css({
+    			'height': dialogH,
+    			'overflow-y': 'auto'
+    		});
+    		top = 30;
+    	}else{
+    		dialog.attr("style", "");
+			}
+    	dialog.addClass('show');
+    	dialog.animate({
+            top: top
+        }, 600);
+    });
+    $('.dialog-bg').click(function(e){
+    	dialog.animate({
+            top: '100%'
+        }, 600, function(){
+        	dialog.removeClass('show');
+        });
+    });
+</script>
