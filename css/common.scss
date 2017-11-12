@@ -149,6 +149,7 @@
 
     img{
     	width: 100%;
+    	height: 100%;
     }
 }
 .item{
@@ -225,7 +226,6 @@
 	    display: table;
 	    border-collapse: separate;
 	    width: 100%;
-
 		.input{
 			@include font-color(22.01,#949292);
 			@include height-line(70);
@@ -236,35 +236,33 @@
 		    box-sizing: border-box;
 		}
 		.phone{
-	    		border: 1px solid #ccc;
     			display: table-cell;
-    			border-right:none;
-    			border-top-left-radius: 4px;
 		    }
-		  .code{
-		  	border: 1px solid #ccc;
-		  	border-top:none;
-		  	border-bottom-left-radius: 4px;
-			border-bottom-right-radius: 4px;
-		  }
 	    .getCode{
 	    		@include font-color(22.01,#949292);
 		    	text-align:center;
 			    display: table-cell;
 			    padding: 0 0.23rem;
 			    white-space: nowrap;
-		        border-top-right-radius: 4px;
-	    		border: 1px solid #ccc;
-	    		border-left:none;
+		     //    border-top-right-radius: 4px;
+	    		// border: 1px solid #ccc;
+	    		// border-left:none;
 	    		&.active{
 	    			@include font-color(22.01,#fe0404);
 	    		}
 		    }
-		
-		
-		}
-		.form-field:first-child{
-			border-bottom:none;
+		 
+		    &.form-phone{
+			    border-top-right-radius: 4px;
+			    border: 1px solid #ccc;
+			    border-top-left-radius: 4px;
+		    	border-bottom:none;
+		    }
+		    &.form-code{
+		    	border-bottom-right-radius: 4px;
+			    border: 1px solid #ccc;
+			    border-bottom-left-radius: 4px;
+		    }
 		}
 		.btn{
 			margin-top: rem(90);
@@ -358,20 +356,16 @@
 			margin:0;
 			.form-field{
 				margin-bottom: rem(10);
-				.phone{
+				&.form-phone{
 					border:none;
 					border-radius:0;
 					border-top:1px solid #ccc;
 					border-bottom:1px solid #ccc;
 				}
 				.getCode{
-					border:none;
-					border-radius:0;
-					border-top:1px solid #ccc;
-					border-bottom:1px solid #ccc;
 					background-color:#fff;
 				}
-				.code{
+				&.form-code{
 					border:none;
 					border-top:1px solid #ccc;
 					border-bottom:1px solid #ccc;
@@ -423,7 +417,7 @@
 			}
 		}
 		&.title{
-			border:none;
+			border-top:none;
 			@include font-color(24.01,#1e1d1d);
 			line-height: rem(40.01);
 		}
@@ -589,6 +583,7 @@
 			height:rem(330);
 			img{
 			width:100%;
+			height: 100%;
 			}
 		}
 		.detail{
@@ -611,6 +606,7 @@
 
 	    img{
 	    	width: 100%;
+	    	height:100%;
 	    }
 	}
 	.item{
