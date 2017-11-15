@@ -36,33 +36,84 @@
     display: block;
   }
   .con{
-  	background-color:#9fc5aa;
-  	padding:rem(26);
-  	@include font-color(26.01,#000);
-  	.tip{
-  		
-  		line-height: rem(52.02);
+	  	background-color:#9fc5aa;
+	  	padding:rem(26);
+	  	@include font-color(26.01,#000);
+	  	.tip{
+	  		
+	  		line-height: rem(52.02);
+	  	}
+	  	.list{
+	  		li{
+	  			line-height: rem(40);
+	  			padding:0 rem(30);
+	  			.rhombus{
+	  				background-color:#000000;
+	  				width: rem(8);
+	  				height: rem(8);
+				    display: inline-block;
+				    vertical-align: middle;
+				    margin-right: rem(10);
+	  				 -moz-transform:rotate(45deg);
+	                -webkit-transform:rotate(45deg);
+	                -o-transform:rotate(45deg);
+	                transform:rotate(45deg);
+	  			}
+	  		}
+	  	}
   	}
-  	.list{
-  		li{
-  			line-height: rem(40);
-  			padding:0 rem(30);
-  			.rhombus{
-  				background-color:#000000;
-  				width: rem(8);
-  				height: rem(8);
-			    display: inline-block;
-			    vertical-align: middle;
-			    margin-right: rem(10);
-  				 -moz-transform:rotate(45deg);
-                -webkit-transform:rotate(45deg);
-                -o-transform:rotate(45deg);
-                transform:rotate(45deg);
-  			}
+  
+  .title{
+	    @include font-color(28,#6c6c6c);
+	    @include height-line(70);
+	    border-bottom: 1px solid #eee;
+	    text-align: center;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    width: 100%;
+	    z-index: 9;
+	    background: #fff;
+	    .button-bar{
+	  	    position: absolute;
+		    top: 0;
+		    bottom: 0;
+		    display: inline-block;
+		    width: rem(50);
+		    left: 0;
+  		}
+  		span{
+  			display: inline-block;
+  			@include ellipsis(450);
   		}
   	}
-
-  }
+  .select{
+	    height: 100%;
+	    overflow-y: auto;
+	    padding:rem(70) 0;
+	    box-sizing: border-box;
+	    @extend .scroll;
+	    ul{
+    		li{
+    			@include font-color(24.01,#404040);
+			    @include height-line(60);
+			    position: relative;
+    			padding-left: rem(27);
+    			border-bottom:1px solid #eee;
+    			&.active{
+    				background-color:#eee;
+    			}
+    		}
+    		li:after{
+    			 @extend .arrow-right;
+		          position: absolute;
+		          top: 0;
+		          bottom: 0;
+		          right: rem(20);
+    		}
+	    }
+  	}
   .btn{
   		@include height-line(77);
   		text-align: center;	
@@ -245,8 +296,8 @@
 			    display: table-cell;
 			    padding: 0 0.23rem;
 			    white-space: nowrap;
-	    		&.active{
-	    			@include font-color(22.01,#fe0404);
+	    		&.visited{
+	    			@include font-color(22.01,#c3c3c3);
 	    		}
 		    }
 		 
@@ -330,7 +381,7 @@
 			}
 		}
 		&.year{
-				@include font-color(24.01, #434343);
+				@include font-color(24.01, #181818);
 			.price{
 				@include font-color(36.01, #fd8d37);
 				padding:0 rem(15);
@@ -343,6 +394,14 @@
 			@extend .form;
 			margin:0;
 			padding:rem(25) rem(66);
+			.getCode
+			{
+				color: #444343;
+				&.visited{
+	    			@include font-color(22.01,#c3c3c3);
+	    		}
+			}
+			
 		}
 	}
 	.item{
@@ -374,7 +433,7 @@
 
 	}
 	.textarea{
-		@include font-color(24.01, #6c6c6c);
+		@include font-color(24.01, #b4b3b3);
 		border:none;
 		border-top:1px solid #ccc;
 		border-bottom:1px solid #ccc;
@@ -443,25 +502,29 @@
     z-index: 9;
     ul {
       @extend .cl;
+	    flex-direction: row;
+	    display: -webkit-flex;
+	    display: flex;
+	    flex-wrap: wrap;
+	    justify-content: space-between;
+	    li{
+    	    flex: 1;
+		    text-align: center;
+		    display: flex;
+		    flex-direction: column;
+		    a {
 
-      li {
-        width: 50%;
-        float: left;
-        text-align: center;
-      }
+		        display: block;
+		        height: 100%;
+		        box-sizing: border-box;
+		        @include font-color(24.01, #a1a1a1);
+		        &:active, &.active {
+			          color: #52b35e;
+			        }
 
-      a {
-        display: inline-block;
-        height: 100%;
-        padding: 0 rem(10);
-        box-sizing: border-box;
-        @include font-color(24.01, #343434);
-
-        &:active, &.active {
-          color: #52b35e;
-        }
-
-      }
+		      }
+	    }
+      	
 
     }
 
@@ -515,11 +578,8 @@
 			padding:rem(30) rem(32);
 			border-bottom:1px solid #e6e6e6;
 			.name{
-				max-width:rem(464);
 				display: inline-block;
-				overflow: hidden; 
-				text-overflow: ellipsis;
-				white-space: nowrap;
+				@include ellipsis(464);
 			}
 			.price{
 				@include font-color(26.01, #fd8d37);
@@ -629,4 +689,28 @@
 		}
 	}
 
+}
+.address,.contact{
+	.name{
+		color: #404040;
+	}
+	.text{
+		color: #b4b3b3;
+	}
+	.select{
+		display: block;
+		position: relative;
+		&:after {
+          @extend .arrow-right;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: rem(20);
+        }
+	}
+}
+.cardbuy{
+	.name{
+		color: #606060;
+	}
 }

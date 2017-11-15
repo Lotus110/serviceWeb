@@ -32,7 +32,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   overflow: hidden;
   color: #393939;
-  font-size: 0.2801rem; }
+  font-size: 0.3rem; }
 
 .cl:after, .subnav ul:after, .nav-bar ul:after {
   content: "";
@@ -44,18 +44,29 @@ body {
 .cl, .subnav ul, .nav-bar ul {
   zoom: 1; }
 
-.icon {
+.icon, .arrow-left:before, .arrow-right, .dialog .select ul li:after, .address .select:after, .contact .select:after {
   content: '';
   display: inline-block;
   background-position: center center;
   background-repeat: no-repeat; }
 
-.scroll::-webkit-scrollbar-track, .page::-webkit-scrollbar-track, .dialog::-webkit-scrollbar-track, .buy .textarea::-webkit-scrollbar-track, .order::-webkit-scrollbar-track, .cardorder::-webkit-scrollbar-track {
+.arrow-left:before {
+  width: 0.14rem;
+  height: 0.24rem;
+  background-image: url(../images/arrow-left.png);
+  background-size: 100% 100%; }
+
+.arrow-right, .dialog .select ul li:after, .address .select:after, .contact .select:after {
+  width: 0.14rem;
+  background-image: url(../images/right-allow.png);
+  background-size: 100%; }
+
+.scroll::-webkit-scrollbar-track, .page::-webkit-scrollbar-track, .dialog::-webkit-scrollbar-track, .dialog .select::-webkit-scrollbar-track, .buy .textarea::-webkit-scrollbar-track, .order::-webkit-scrollbar-track, .cardorder::-webkit-scrollbar-track {
   border-radius: 0.03rem; }
-.scroll::-webkit-scrollbar, .page::-webkit-scrollbar, .dialog::-webkit-scrollbar, .buy .textarea::-webkit-scrollbar, .order::-webkit-scrollbar, .cardorder::-webkit-scrollbar {
+.scroll::-webkit-scrollbar, .page::-webkit-scrollbar, .dialog::-webkit-scrollbar, .dialog .select::-webkit-scrollbar, .buy .textarea::-webkit-scrollbar, .order::-webkit-scrollbar, .cardorder::-webkit-scrollbar {
   width: 0.03rem;
   background-color: rgba(0, 0, 0, 0.1); }
-.scroll::-webkit-scrollbar-thumb, .page::-webkit-scrollbar-thumb, .dialog::-webkit-scrollbar-thumb, .buy .textarea::-webkit-scrollbar-thumb, .order::-webkit-scrollbar-thumb, .cardorder::-webkit-scrollbar-thumb {
+.scroll::-webkit-scrollbar-thumb, .page::-webkit-scrollbar-thumb, .dialog::-webkit-scrollbar-thumb, .dialog .select::-webkit-scrollbar-thumb, .buy .textarea::-webkit-scrollbar-thumb, .order::-webkit-scrollbar-thumb, .cardorder::-webkit-scrollbar-thumb {
   border-radius: 0.03rem;
   background-color: rgba(0, 0, 0, 0.2); }
 
@@ -120,6 +131,53 @@ body {
         -webkit-transform: rotate(45deg);
         -o-transform: rotate(45deg);
         transform: rotate(45deg); }
+  .dialog .title {
+    font-size: 0.28rem;
+    color: #6c6c6c;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9;
+    background: #fff; }
+    .dialog .title .button-bar {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      display: inline-block;
+      width: 0.5rem;
+      left: 0; }
+    .dialog .title span {
+      display: inline-block;
+      max-width: 4.5rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; }
+  .dialog .select {
+    height: 100%;
+    overflow-y: auto;
+    padding: 0.7rem 0;
+    box-sizing: border-box; }
+    .dialog .select ul li {
+      font-size: 0.2401rem;
+      color: #404040;
+      height: 0.6rem;
+      line-height: 0.6rem;
+      position: relative;
+      padding-left: 0.27rem;
+      border-bottom: 1px solid #eee; }
+      .dialog .select ul li.active {
+        background-color: #eee; }
+    .dialog .select ul li:after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0.2rem; }
   .dialog .btn {
     height: 0.77rem;
     line-height: 0.77rem;
@@ -267,9 +325,9 @@ body {
       display: table-cell;
       padding: 0 0.23rem;
       white-space: nowrap; }
-      .form .form-field .getCode.active {
+      .form .form-field .getCode.visited {
         font-size: 0.2201rem;
-        color: #fe0404; }
+        color: #c3c3c3; }
     .form .form-field.form-phone {
       border-top-right-radius: 4px;
       border: 1px solid #ccc;
@@ -342,7 +400,7 @@ body {
       margin-left: 0.2rem; }
   .buy .text.year {
     font-size: 0.2401rem;
-    color: #434343; }
+    color: #181818; }
     .buy .text.year .price {
       font-size: 0.3601rem;
       color: #fd8d37;
@@ -352,6 +410,11 @@ body {
   .buy .text.form {
     margin: 0;
     padding: 0.25rem 0.66rem; }
+    .buy .text.form .getCode {
+      color: #444343; }
+      .buy .text.form .getCode.visited {
+        font-size: 0.2201rem;
+        color: #c3c3c3; }
 .buy .contactinfo.form {
   margin: 0; }
   .buy .contactinfo.form .form-field {
@@ -370,7 +433,7 @@ body {
       border-radius: 0; }
 .buy .textarea {
   font-size: 0.2401rem;
-  color: #6c6c6c;
+  color: #b4b3b3;
   border: none;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
@@ -425,19 +488,25 @@ body {
   left: 0;
   right: 0;
   z-index: 9; }
-  .subnav ul li {
-    width: 50%;
-    float: left;
-    text-align: center; }
-  .subnav ul a {
-    display: inline-block;
-    height: 100%;
-    padding: 0 0.1rem;
-    box-sizing: border-box;
-    font-size: 0.2401rem;
-    color: #343434; }
-    .subnav ul a:active, .subnav ul a.active {
-      color: #52b35e; }
+  .subnav ul {
+    flex-direction: row;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    .subnav ul li {
+      flex: 1;
+      text-align: center;
+      display: flex;
+      flex-direction: column; }
+      .subnav ul li a {
+        display: block;
+        height: 100%;
+        box-sizing: border-box;
+        font-size: 0.2401rem;
+        color: #a1a1a1; }
+        .subnav ul li a:active, .subnav ul li a.active {
+          color: #52b35e; }
 
 .order {
   padding-bottom: 0;
@@ -487,8 +556,8 @@ body {
       padding: 0.3rem 0.32rem;
       border-bottom: 1px solid #e6e6e6; }
       .cardorder .list .title .name {
-        max-width: 4.64rem;
         display: inline-block;
+        max-width: 4.64rem;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap; }
@@ -577,5 +646,21 @@ body {
     font-size: 0.2401rem;
     color: #535353;
     line-height: 0.4rem; }
+
+.address .name, .contact .name {
+  color: #404040; }
+.address .text, .contact .text {
+  color: #b4b3b3; }
+.address .select, .contact .select {
+  display: block;
+  position: relative; }
+  .address .select:after, .contact .select:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0.2rem; }
+
+.cardbuy .name {
+  color: #606060; }
 
 /*# sourceMappingURL=common.css.map */
