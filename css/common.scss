@@ -99,10 +99,17 @@
 			@include font-color(24.01,#404040);
 		    @include height-line(60);
 		    position: relative;
-			padding-left: rem(27);
-			border-bottom:1px solid #eee;
 			&.active{
 				background-color:#eee;
+			}
+			&:first-child:before{
+  			 height: 0;
+			}
+			&:before {
+			    content: '';
+			    display: block;
+			    height: 1px;
+			    background-color: #eee;
 			}
 			&:after{
 			 @extend .arrow-right;
@@ -110,6 +117,9 @@
 	          top: 0;
 	          bottom: 0;
 	          right: rem(20);
+			}
+			span{
+				padding-left: rem(27);
 			}
 		}
 		
@@ -259,8 +269,8 @@
 		height: rem(185);
 		background: url(../images/logo.png) no-repeat;
 		margin:0 auto;
-		margin-top: rem(56);
-		margin-bottom: rem(98);
+		margin-top: rem(63);
+		margin-bottom: rem(104);
 		background-position: center center;
       	background-size: auto 100%;
 	}
@@ -268,6 +278,15 @@
 		@extend .form;
 	}
 	
+}
+.code{
+	.form-phone{
+		border-bottom-right-radius: 4px;
+	    border-bottom-left-radius: 4px;
+	}
+	.form .form-field .getCode{
+		@include font-color(24,#333333);
+	}
 }
 .form{
 		margin-left:rem(66);

@@ -29,9 +29,9 @@ body { position: absolute; top: 0; right: 0; bottom: 0; left: 0; font-family: "H
 // .icon-order-null { @extend .icon; width: rem(200); background-image: url(./images/order-null.png); background-size: 100%; }
 // .icon-notice { @extend .icon; width: rem(30); background-image: url(./images/notice.png); background-size: 100%; }
 
-.scroll { &::-webkit-scrollbar-track { border-radius: rem(2); }
-  &::-webkit-scrollbar { width: rem(2); background-color: rgba(0, 0, 0, 0.1); }
-  &::-webkit-scrollbar-thumb { border-radius: rem(2); background-color: rgba(0, 0, 0, 0.2); }
+.scroll { &::-webkit-scrollbar-track { border-radius: rem(1); }
+  &::-webkit-scrollbar { width: rem(1); background-color: rgba(0, 0, 0, 0.1); }
+  &::-webkit-scrollbar-thumb { border-radius: rem(1); background-color: rgba(0, 0, 0, 0.2); }
 }
 .placeholder-color { &::-webkit-input-placeholder { color: #f5f5f5; }
   &:-moz-placeholder { color: #f5f5f5; }
