@@ -662,50 +662,49 @@
 .activity{
 	padding-top:rem(66);
 	padding-bottom:0;	
-	background:#fff;
 	.list{
-		margin:rem(26) rem(26) 0 rem(26);
-		.list-item{
-			padding:rem(20) 0;
-			@include font-color(30,#535353);
-			background:#fff;
-			border-bottom:1px solid #eee;
-			display: -webkit-flex;
-	    	display: flex;
-	    	.title{
-	    		flex: 1;
-	    	}
-	    	.img{
-	    		flex: 0 0 rem(140);
-	    		width: rem(120);
-	    		height: rem(120);
-	    		img{
-	    			width: 100%;
-	    			height: 100%;
-	    		}
-	    	}
-	    	&:last-child{
-    		    border-bottom: 0;
-	    	}
+		margin:rem(32) rem(26);
+		.img{
+			width: rem(585);
+			height:rem(330);
+			img{
+			width:100%;
+			height: 100%;
+			}
+		}
+		.detail{
+			padding:rem(21) rem(27) rem(21) 0;
+			@include font-color(20,#ff4848);
+			display: inline-block;
+			background-color:#fff;
+			text-align: right;
+			width: 100%;
+			box-sizing: border-box;
+			display: block;
 		}
 	}
 }
 .activitydetail{
-	background: #fff;
-	padding-bottom:0;
+	.banner{
+		height: rem(357);
+		width:100%;
+	    overflow: hidden;
+
+	    img{
+	    	width: 100%;
+	    	height:100%;
+	    }
+	}
 	.item{
+		margin-top: rem(17);
+		background: #fff;
 		.name{
-			@include font-color(35.01,#3f4344);
+			@include font-color(30.01,#535353);
 			margin-bottom:rem(10);
-			line-height: rem(50.01);
-		}
-		.time{
-			@include font-color(30.01,#9ea4a9);
-			padding:rem(15) 0;
 		}
 		.inc{
-			@include font-color(30.01,#505660);
-			line-height: rem(50);
+			@include font-color(24.01,#535353);
+			line-height: rem(40);
 		}
 	}
 
