@@ -650,6 +650,8 @@ body {
 .activitydetail {
   background: #fff;
   padding-bottom: 0; }
+  .activitydetail .item {
+    margin-bottom: 0.75rem; }
   .activitydetail .item .name {
     font-size: 0.3501rem;
     color: #3f4344;
@@ -679,5 +681,66 @@ body {
 
 .cardbuy .name {
   color: #606060; }
-
+.contactForm {
+  margin-top: 0.4rem; }
+  .contactForm .info {
+    margin-left: 0.33rem;
+    margin-right: 0.33rem; }
+    .contactForm .info .text {
+      font-size: 0.2201rem;
+      color: #949292;
+      height: 0.7rem;
+      line-height: 0.7rem;
+      margin: 0 auto;
+      padding: 0 0.27rem;
+      width: 100%;
+      display: block;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 0.2rem;
+      overflow: hidden; }
+      .contactForm .info .text.form-field {
+        display: table;
+        background: #fff;
+        padding: 0; }
+      .contactForm .info .text .input {
+        font-size: 0.2201rem;
+        color: #949292;
+        height: 0.7rem;
+        line-height: 0.7rem;
+        margin: 0 auto;
+        padding: 0 0.27rem;
+        width: 100%;
+        display: block;
+        box-sizing: border-box; }
+      .contactForm .info .text .phone {
+        display: table-cell; }
+      .contactForm .info .text .getCode {
+        font-size: 0.2201rem;
+        color: #949292;
+        text-align: center;
+        display: table-cell;
+        padding: 0 0.23rem;
+        white-space: nowrap; }
+        .contactForm .info .text .getCode.visited {
+          font-size: 0.2201rem;
+          color: #c3c3c3; }
+    .contactForm .info .textarea {
+      font-size: 0.2401rem;
+      color: #b4b3b3;
+      border: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 0.23rem 0.27rem;
+      width: 100%;
+      box-sizing: border-box;
+      height: 3rem;
+      line-height: 0.4001rem;
+      outline: none; }
+    .contactForm .info .tel {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.3001rem;
+      color: #6a6a6a; }
 /*# sourceMappingURL=common.css.map */
