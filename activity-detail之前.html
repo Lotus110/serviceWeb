@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="./css/common.css">
+	<script src="./js/jquery-3.2.1.min.js"></script>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 6.4 + 'px';
+	</script>
+</head>
+<body>
+	<nav class="bar bar-tab">
+		<a class="button button-orange" href="#">
+			立即报名（咨询）
+		</a>
+	</nav>
+	<div class="page">
+		<div class="content activitydetail">
+			<div class="banner">
+				<img src="images/banner.png">
+			</div>
+			<div class="item">
+				<div class="name">
+					活动介绍：
+				</div>
+				<div class="inc">
+					活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	/*弹出已选商品*/
+    var dialog = $('.dialog');
+    var bodyH = $('body').height();
+    $('.btn-buy').click(function(){
+    	var top = (bodyH - dialog.height())/2;
+    	var dialogH = bodyH - 60;
+    	if(top <= 30){
+    		dialog.css({
+    			'height': dialogH,
+    			'overflow-y': 'auto'
+    		});
+    		top = 30;
+    	}else{
+    		dialog.attr("style", "");
+			}
+    	dialog.addClass('show');
+    	dialog.animate({
+            top: top
+        }, 600);
+    });
+    $('.dialog-bg').click(function(e){
+    	dialog.animate({
+            top: '100%'
+        }, 600, function(){
+        	dialog.removeClass('show');
+        });
+    });
+</script>
