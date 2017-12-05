@@ -689,6 +689,27 @@
 	    	}
 		}
 	}
+	.listItem{
+		margin:rem(32) rem(26);
+		.img{
+			width: rem(585);
+			height:rem(330);
+			img{
+			width:100%;
+			height: 100%;
+			}
+		}
+		.detail{
+			padding:rem(21) rem(27) rem(21) 0;
+			@include font-color(20,#ff4848);
+			display: inline-block;
+			background-color:#fff;
+			text-align: right;
+			width: 100%;
+			box-sizing: border-box;
+			display: block;
+		}
+	}
 }
 .activitydetail{
 	background: #fff;
