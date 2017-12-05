@@ -694,6 +694,7 @@
 	background: #fff;
 	padding-bottom:0;
 	.item{
+		margin-bottom: rem(75);
 		.name{
 			@include font-color(35.01,#3f4344);
 			margin-bottom:rem(10);
@@ -732,5 +733,77 @@
 .cardbuy{
 	.name{
 		color: #606060;
+	}
+}
+.contactForm{
+	.info{
+		margin-left:rem(20);
+		margin-right:rem(20);
+	    .text{
+		    @include font-color(22.01,#949292);
+		    @include height-line(70);
+		    margin: 0 auto;
+		    padding: 0 0.27rem;
+		    width: 100%;
+		    display: block;
+		    box-sizing: border-box;
+		    border: 1px solid #ccc;
+	    	border-radius: 4px;
+	    	margin-bottom: rem(20);
+    	    overflow: hidden;
+	    	&.form-field{
+			    display: table;
+		    	background:#fff;
+		    	padding:0;
+	    	}
+	    	.input{
+				@include font-color(22.01,#949292);
+				@include height-line(70);
+				margin:0 auto;
+				padding: 0 rem(27);
+				width: 100%;
+			    display: block;
+			    box-sizing: border-box;
+			}
+			.phone{
+    			display: table-cell;
+		    }
+		    .getCode{
+	    		@include font-color(22.01,#949292);
+		    	text-align:center;
+			    display: table-cell;
+			    padding: 0 0.23rem;
+			    white-space: nowrap;
+	    		&.visited{
+	    			@include font-color(22.01,#c3c3c3);
+	    		}
+		    }
+		}
+		.name{
+			@include font-color(24.01, #404040);
+			@include height-line(66);
+		}
+		.tip-name:before {
+			content: '*';
+			color:#fa6464;
+		}
+		.textarea{
+			@include font-color(24.01, #b4b3b3);
+			border:none;
+			border: 1px solid #ccc;
+	    	border-radius: 4px;
+			padding:rem(23) rem(27);
+			width: 100%;
+			box-sizing: border-box;
+			height: rem(300);
+			line-height: rem(40.01);
+			@extend .scroll;
+			outline: none;
+		}
+		.tel{
+			margin-top: rem(100);
+			text-align: center;	
+			@include font-color(30.01,#6a6a6a);
+		}
 	}
 }
