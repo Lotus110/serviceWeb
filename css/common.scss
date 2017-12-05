@@ -749,7 +749,6 @@
 		    box-sizing: border-box;
 		    border: 1px solid #ccc;
 	    	border-radius: 4px;
-	    	margin-bottom: rem(20);
     	    overflow: hidden;
 	    	&.form-field{
 			    display: table;
@@ -801,7 +800,7 @@
 			outline: none;
 		}
 		.tel{
-			margin-top: rem(100);
+			margin-top: rem(40);
 			text-align: center;	
 			@include font-color(30.01,#6a6a6a);
 		}
