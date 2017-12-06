@@ -103,10 +103,23 @@ body {
   background-color: #fff;
   visibility: hidden;
   transform: translateY(100%);
-  transition: transform ease-in-out 0.3s, visibility 0.5s;
+  transition: transform linear 0.3s, visibility 0.5s;
   overflow: hidden; }
+  .dialog.shopInfo {
+    border-radius: 4px; }
+    .dialog.shopInfo .name {
+      font-size: 0.28rem;
+      color: #000;
+      border-bottom: 1px solid #eee;
+      padding: 0.15rem;
+      text-align: center; }
+    .dialog.shopInfo .content {
+      padding: 0.3rem; }
+      .dialog.shopInfo .content img {
+        width: 100%;
+        height: 100%; }
   .dialog.show {
-    transform: translateY(0);
+    transform: translateX(0);
     visibility: visible; }
   .dialog.show ~ .dialog-bg {
     display: block; }
