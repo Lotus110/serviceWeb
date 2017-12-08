@@ -11,45 +11,10 @@
 	<script>
 		document.documentElement.style.fontSize = document.documentElement.clientWidth / 6.4 + 'px';
 	</script>
-	<style type="text/css">
-		.nav-bar1{
-		    height: 0.70rem;
-		    line-height: 0.70rem;
-		    background-color: #fff;
-		    position: absolute;
-		    top: 0;
-		    left: 0;
-		    right: 0;
-		    z-index: 9;
-		        float: left;
-		        overflow-y: hidden;
-		        overflow-x: scroll;
-		        width: 100%;
-		}
-		.nav-bar1 .test{
-			width:100%;display: inline;white-space: nowrap;float:left;overflow-y: hidden;
-		        overflow-x: scroll;
-		}
-		.nav-bar1 .test li{
-			float: left;
-		}
-		.nav-bar1 .test li a{
-			display:inline-block;width:1.6rem;
-		    height: 100%;
-		    box-sizing: border-box;
-		    font-size: 0.2401rem;
-		    color: #a1a1a1;
-		    text-align: center;
-		}
-		.nav-bar1 ul li a:active, .nav-bar1 ul li a.active {
-		    color: #52b35e;
-		    border-bottom: 3px solid #52b35e;
-		   }
-	</style>
 </head>
 <body>
-	<header class="nav-bar1">
-		<ul class="test" id="test">
+	<header class="nav-bar">
+		<ul>
 			<li><a class="active" href="javascript:;">全部</a></li>
 			<li><a href="javascript:;">特色活动</a></li>
 			<li><a href="javascript:;">福利活动</a></li>
@@ -141,74 +106,6 @@
         	dialog.removeClass('show');
         });
     });
-
-    $(function(){
-    	 // var startX, startY, endX, endY;
-      //    var w=$("#test li a").width();
-      //    document.getElementById("test").addEventListener("touchstart", touchStart, false);
-      //    document.getElementById("test").addEventListener("touchmove", touchMove, false);
-      //    document.getElementById("test").addEventListener("touchend", touchEnd, false);
-      //    function touchStart(event) {
-      //        var touch = event.touches[0];
-      //       startY = touch.pageY;
-      //        startX = touch.pageX;
-      //        console.log("startX:"+startY);
-      //        console.log("startY:"+startX);
-      //    }
-      //    function touchMove(event) {
-      //        var touch = event.touches[0];
-      //        //endY = (startY - touch.pageY);
-      //        endX = touch.pageX;
-      //        endY = touch.pageY;
-      //        console.log("endX:"+endX);
-      //        console.log("endY:"+endY);
-      //    }
-      //    function touchEnd(event) {
-      //    	if(startX>endX){  //判断左右移动程序
-      //               $("#test li a").scrollLeft($("#test li a").scrollLeft()+w);
-      //         }else{
-      //              $("#test li a").animate({scrollLeft: $("#test li a").scrollLeft()-w},100);
-      //        }
-      //    }
-     	 var w=$("#test li a").width();
-		  $("#test").on('touchmove', function(event) {
-		  		// console.log();
-		        var touch= event.touches[0];
-		        if(touch.pageX>10){
-		           $("#test li a").animate({scrollLeft: $("#test li a").scrollLeft()+w},100);
-		        }
-		        if(touch.pageX<-10){
-		            $("#test li a").animate({scrollLeft: $("#test li a").scrollLeft()-w},100);
-		        }
-		    });
-
-       // _touch()
-    })
-     function _touch(){
-              var startx;//让startx在touch事件函数里是全局性变量。
-              var endx;
-               var el=document.getElementById('test');
-               var w=$("#test li a").width();
-              function cons(){   //独立封装这个事件可以保证执行顺序，从而能够访问得到应该访问的数据。
-                     if(startx>endx){  //判断左右移动程序
-                     	alert("left");
-                            // $("#test li a").scrollLeft($("#test li a").scrollLeft()+w);
-                      }else{
-                           // $("#test li a").animate({scrollLeft: $("#test li a").scrollLeft()-w},100);
-                     }
-               }
-               el.addEventListener('touchstart',function(e){
-                       var touch=e.changedTouches;
-                     startx=touch[0].clientX;
-                    starty=touch[0].clientY;
-            });
-             el.addEventListener('touchend',function(e){
-                 var touch=e.changedTouches;
-                     endx=touch[0].clientX;
-                      endy=touch[0].clientY;
-                      cons();  
-           });
-     }
 </script>
 
 
