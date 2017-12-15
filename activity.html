@@ -13,17 +13,30 @@
 	</script>
 </head>
 <body>
-	<header class="nav-bar">
-		<ul>
-			<li><a class="active" href="javascript:;">全部</a></li>
-			<li><a href="javascript:;">特色活动</a></li>
+
+	<header class="nav-bar search-nav">
+		<div class="search">
+			<a class="search-btn" href="javascript:;"></a>
+			<input type="text" placeholder="请选择城市">
+		</div>
+		<ul class="nav-ul">
+			<li><a class="active subsclick">全部</a></li>
+			<li><a href="javascript:;">特色活动部部</a></li>
 			<li><a href="javascript:;">福利活动</a></li>
 			<li><a href="javascript:;">赞助申请</a></li>
 			<li><a href="javascript:;">其它活动</a></li>
+
+<!-- 
+			<li><a class="active subsclick"><span class="span">全部</span><i></i></a></li>
+			<li><a href="javascript:;"><span class="span">特色活动部部</span><i></i></a></li>
+			<li><a href="javascript:;"><span class="span">福利活动</span><i></i></a></li>
+			<li><a href="javascript:;"><span class="span">赞助申请</span><i></i></a></li>
+			<li><a href="javascript:;"><span class="span">其它活动</span></a></li> -->
 		</ul>
 	</header>
+	
 	<div class="page">
-		<div class="content activity">
+		<div class="content activity activity-new">
 			<div class="list">
 				<a class="list-item btn-buy">
 					<div class="title">赞助申请赞助申请赞助申请赞助申请申请赞助申请</div>
@@ -77,6 +90,24 @@
 		</div>
 	</div>
 	<div class="dialog-bg"></div>
+	<div class="subs">
+		<ul>
+			<li><a class="active" href="javascript:;">不限</a></li>
+			<li><a href="javascript:;">不限</a></li>
+			<li><a href="javascript:;">不限</a></li>
+			<li><a href="javascript:;">不限</a></li>
+			<li><a href="javascript:;">不限</a></li>
+			<li><a href="javascript:;">不限</a></li>
+			<li><a href="javascript:;">不限</a></li>
+			<li><a href="javascript:;">不限</a></li>
+			<li><a href="javascript:;">不限</a></li>
+			<li><a href="javascript:;">不限</a></li>
+			<li><a href="javascript:;">不限</a></li>
+			<li><a href="javascript:;">不限</a></li>
+		</ul>
+	</div>
+	<div class="subs-bg">
+	</div>
 </body>
 </html>
 <script type="text/javascript">
@@ -105,6 +136,18 @@
         }, 600, function(){
         	dialog.removeClass('show');
         });
+    });
+	var subs = $('.subs');
+    $('.subsclick').click(function(){
+    	if(subs.css('display')=='none')
+		{
+			subs.slideDown();
+			subs.addClass('show');
+		}
+    });
+    $('.subs-bg').click(function(e){
+    	subs.slideUp();
+    	subs.removeClass('show');
     });
 </script>
 
