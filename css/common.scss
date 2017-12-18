@@ -691,6 +691,7 @@
     	&.nav-ul{
     		@include height-line(78);
     		background:#f0f0f0;
+    		border-bottom:rem(3) solid #f0f0f0;
     		li{
     			a{ 
     				display: inline-block;
@@ -768,7 +769,7 @@
 
 .subs{
 	position: absolute;
-	top: rem(156);
+	top: rem(159);
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -799,7 +800,7 @@
 }
 .subs-bg{
 	position: absolute;
-	top: rem(156);
+	top: rem(159);
 	bottom: 0;
 	left: 0;
 	right: 0;
