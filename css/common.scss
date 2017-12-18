@@ -646,7 +646,7 @@
     right: 0;
     z-index: 9;
     &.search-nav{
-    	@include height-line(148);
+    	@include height-line(156);
     	.search{
 			margin:rem(9) rem(26) rem(11) rem(24);
 		    @include height-line(57);
@@ -693,7 +693,6 @@
     		background:#f0f0f0;
     		li{
     			a{ 
-    				
     				display: inline-block;
 	    			white-space: nowrap;
 				    overflow: hidden;
@@ -716,8 +715,30 @@
     			}
     			
     		}
+    		// li{
+      //   		overflow: hidden; 
+    		// 	a{ 
+    		// 		display: flex;
+      //             	justify-content: center;
+      //             	.span{
+      //             		white-space: nowrap;
+		    //           	overflow: hidden;
+		    //           	text-overflow: ellipsis;
+      //             	}
+    		// 		i{
+		    //            flex: 0 rem(22);
+		    //         }
+		    //         i:after{
+		    //             @extend .icon; 
+		    //              width: rem(22); 
+		    //              height: rem(12);
+		    //             background-image: url(../images/arrow-down.png); 
+		    //             background-size: 100%; 
+		    //         }
+    		// 	}
+    		// }
     	}
-      @extend .cl;
+      	@extend .cl;
 	    flex-direction: row;
 	    display: -webkit-flex;
 	    display: flex;
@@ -747,7 +768,7 @@
 
 .subs{
 	position: absolute;
-	top: rem(155);
+	top: rem(156);
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -758,11 +779,7 @@
 	@extend .scroll;
 	background:#fff;
 	border-top:1px solid #e6e6e6;
-	// visibility:hidden;
 	display:none;
-	// opacity: 0;
-	// 	transform: translateY(-155);
-	
 	li{
 		
 		a{
@@ -776,19 +793,13 @@
 		}
 		
 	}
-	&.show {
-	    // transform: translateX(0);
-	    // visibility: visible;
-	    // transition: all .3s;
-		// transform: translateY(0);
-  	}
 	  &.show ~ .subs-bg {
 	    display: block;
 	  }
 }
 .subs-bg{
 	position: absolute;
-	top: rem(155);
+	top: rem(156);
 	bottom: 0;
 	left: 0;
 	right: 0;
