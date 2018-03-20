@@ -304,7 +304,10 @@
 	    position: absolute;
 	    top: 0;
 	    bottom: 0;
-	    display: inline-block;
+        display: flex;
+    	flex-direction: column;
+	    justify-content: center;
+    	align-items: center;
 	    &.collect{
 	    	@include font-color(26,#fff);
 	    	right:rem(20);
@@ -753,14 +756,14 @@
 	}
 }
 .dialog-info{
-	max-height: 7.9rem;
+	max-height: rem(500);
     overflow-y: auto;
     @extend .scroll;
     .square{
 	   	display: flex;
 	    flex-direction: row;
 	    align-items: flex-end;
-	    font-size: .24rem;
+	    font-size: rem(24);
 	    color: #d4151a;
     }
     ul{
@@ -1284,7 +1287,6 @@
     			box-shadow:rem(6) rem(6) rem(6) rgba(212,21,26,0.03);
     			.cart{
     				@include width-height(67,67);
-    				
     				background: -webkit-linear-gradient(#f09092, #dc3f43);
 					background: -o-linear-gradient(#f09092, #dc3f43);
 					background: -moz-linear-gradient(#f09092, #dc3f43);
