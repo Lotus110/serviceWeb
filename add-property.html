@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="./css/common.css">
+	<script src="./js/jquery-3.2.1.min.js"></script>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.2 + 'px';
+	</script>
+</head>
+<body>
+	<header class="bar bg-nav">
+		<a class="button-nav left arrow-left" href="javascript:;"></a>
+		<h1 class="title">C25</h1>
+	</header>
+	<div class="page">
+		<div class="content property">
+			<div class="dropdown-item pro-list">
+				<ul>
+					<li>
+						<div class="dropdown" id="dropdown">
+							<span class="txt">掺膨胀剂</span>
+							<span class="name">p6</span>
+							<i class="dropdown-icon"></i>
+						</div>
+					</li>
+					<li>
+						<div class="dropdown" id="dropdown">
+							<span class="txt">膨胀剂材料</span>
+							<span class="name">GNA</span>
+							<i class="dropdown-icon"></i>
+						</div>
+					</li>
+					<li>
+						<div class="dropdown" id="dropdown">
+							<span class="txt">特性</span>
+							<span class="name">水下</span>
+							<i class="dropdown-icon"></i>
+						</div>
+					</li>
+					<li>
+						<div class="dropdown border">
+							<span class="txt">其它</span>
+							<input type="" name="" class="name input" placeholder="如需要，请输入如”纤维..."/>
+							<i class="clear-icon"></i>
+						</div>
+					</li>
+					<li>
+						<div class="dropdown">
+							<span class="txt">浇筑部位</span>
+							<input type="" name="" class="name input" placeholder="请输入浇筑部位"/>
+							<i class="clear-icon"></i>
+						</div>
+					</li>	
+					<li>
+						<div class="dropdown">
+							<span class="txt">塌落度</span>
+							<div class="step">
+								<input type="" name="" class="input" placeholder="" value="200" /><span>±</span>
+								<input type="" name="" class="input" placeholder="" value="30" /><span>mm</span>
+							</div>
+							
+						</div>
+					</li>
+					<li>
+						<div class="dropdown">
+							<span class="txt">方量</span>
+							<input type="" name="" class="name input" placeholder="请输入方量数字"/>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+			<a class="foot-nav" href="javascript:;">加入购物车</a>
+		</div>
+	</div>
+	<div class="dialog-box">
+		<div class="dialog-wrapper">
+			<div class="title-box">
+				<a href="javascript:;" class="btn-a cancle">取消</a>
+				<span class="txt">机场三标段</span>
+				<a href="javascript:;" class="btn-a certain">确定</a>
+			</div>
+			<div class="container">
+				<ul>
+					<li>
+						<span>P6</span>
+						<i class="radio select-radio" name='sf' data-targat='radio'></i>
+					</li>
+					<li>
+						<span>机场三标段</span>
+						<i class="radio no-radio" name='sf' data-targat='radio'></i>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="dialog-bg"></div>
+</body>
+</html>
+<script type="text/javascript">
+	$(function() {
+		var dialog = $(".dialog-box");
+		$("#dropdown").click(function(){
+			dialog.addClass("show");
+		})
+		$(".certain,.dialog-bg").click(function(){
+			dialog.removeClass("show");
+		})
+	    /**
+        * 手动单选框
+        */
+        $("[data-targat='radio']").click(function () {
+            var self = $(this);
+            if (self.hasClass('select-radio')) return;
+            var name = self.attr('name');
+            // 获取上一次选中的
+            var oldCheckIcon = $("[data-targat='radio'][name='" + name + "'].select-radio");
+            oldCheckIcon.removeClass('select-radio');
+            oldCheckIcon.addClass('no-radio');
+
+            self.removeClass('no-radio');
+            self.addClass('select-radio');
+        });
+	})
+</script>

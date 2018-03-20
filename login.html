@@ -3,32 +3,36 @@
 <head>
 	<meta charset="UTF-8">
 	<title></title>
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<link rel="stylesheet" href="./css/common.css">
-	<script>
-		document.documentElement.style.fontSize = document.documentElement.clientWidth / 6.4 + 'px';
-	</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="./css/common.css">
+
+<script>
+	document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.2 + 'px';
+</script>
 </head>
 <body>
-	<div class="page">
-		<div class="login">
-			<div class="logo"></div>
-			<div class="form">
-				<div class="form-field form-phone">
-					<input class="input phone" type="text" name="" placeholder="请输入手机号" >
-					<!--添加 visited 点击过后 -->
-					<a href="#" class="getCode visited">获取验证码</a>
-				</div>
-				<div class="form-field form-code">
-					<input class="input code" type="text" name="" placeholder="输入验证码">
-				</div>
-				<a href="#" class="btn">确认登录</a>
-				<a href="#" class="enter">管理入口&gt;</a>
+	<div class="login">
+		<!-- 背景和logo -->
+		<div class="bg">
+			<div class="logo">
+				<i class="icon"></i>
 			</div>
+		</div>
+		<div class="login-form">
+			<form>
+				<div class="form-field">
+					<i class="icon user-icon"></i>
+					<input type="text" class="input user-input" name="username" placeholder="登录账号" value=""/>
+				</div>
+				<div class="form-field">
+					<i class="icon pwd-icon"></i>
+					<input type="text" class="input pwd-input" name="password" placeholder="登录密码" value=""/>
+				</div>
+				<div class="button">登录</div>
+			</form>
 		</div>
 	</div>
 </body>
 </html>
-

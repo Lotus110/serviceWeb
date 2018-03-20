@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="./css/common.css">
+	<script src="./js/jquery-3.2.1.min.js"></script>
+	<script src="./js/swipe.js"></script>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.2 + 'px';
+	</script>
+</head>
+<body>
+	<header class="bar bar-nav">
+		<a class="button-nav weather" href="javascript:;">
+			<img src="images/weather.png" class="img" />
+			<span>重庆</span>
+		</a>
+		<h1 class="title">微商砼</h1>
+	</header>
+	<nav class="bar bar-tab">
+		<a class="tab-item active" href="javascript:;">
+			<span class="icon icon-home"></span>
+			<span class="tab-label">首页</span>
+		</a>
+		<a class="tab-item" href="javascript:;">
+			<span class="icon icon-shopcar"></span>
+			<span class="tab-label">购物车</span>
+		</a>
+		<a class="tab-item" href="javascript:;">
+			<span class="icon icon-complaint"></span>
+			<span class="tab-label">投诉</span>
+		</a>
+		<a class="tab-item" href="javascript:;">
+			<span class="icon icon-me"></span>
+			<span class="tab-label">我的</span>
+		</a>
+	</nav>
+	<div class="page">
+		<div class="content index">
+			<div class="banner" id="banner">
+				<ul class="img">
+					<li data-id="0">
+						<img src="images/index-banner1.jpg">
+					</li>
+					<li data-id="1">
+						<img src="images/index-banner2.png">
+					</li>
+					<li data-id="2">
+						<img src="images/index-banner3.jpg">
+					</li>
+				</ul>
+				<ul class="spot" id="spot">
+					<li class="active"></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="index-list">
+				<ul>
+					<li>
+						<span>C20</span>
+						<i href="javascript:;" class="cart"></i>
+					</li>
+					<li>
+						<span>C20</span>
+						<a href="javascript:;" class="cart"></a>
+					</li>
+					<li>
+						<span>C20</span>
+						<a href="javascript:;" class="cart"></a>
+					</li>
+					<li>
+						<span>C20</span>
+						<a href="javascript:;" class="cart"></a>
+					</li>
+					<li>
+						<span>C20</span>
+						<i href="javascript:;" class="cart"></i>
+					</li>
+					<li>
+						<span>C20</span>
+						<a href="javascript:;" class="cart"></a>
+					</li>
+					<li>
+						<span>C20</span>
+						<a href="javascript:;" class="cart"></a>
+					</li>
+					<li>
+						<span>C20</span>
+						<a href="javascript:;" class="cart"></a>
+					</li>
+					<li>
+						<span>C20</span>
+						<i href="javascript:;" class="cart"></i>
+					</li>
+					<li>
+						<span>C20</span>
+						<a href="javascript:;" class="cart"></a>
+					</li>
+					<li>
+						<span>C20</span>
+						<i href="javascript:;" class="cart"></i>
+					</li>
+					<li>
+						<span>C20</span>
+						<a href="javascript:;" class="cart"></a>
+					</li>
+					<li>
+						<span>C20</span>
+						<i href="javascript:;" class="cart"></i>
+					</li>
+					<li>
+						<span>C20</span>
+						<a href="javascript:;" class="cart"></a>
+					</li>
+					<li>
+						<span>C20</span>
+						<i href="javascript:;" class="cart"></i>
+					</li>
+					<li>
+						<span>C20</span>
+						<a href="javascript:;" class="cart"></a>
+					</li>
+					<li>
+						<span>C20</span>
+						<i href="javascript:;" class="cart"></i>
+					</li>
+				
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		  // banner滚动
+		  var bullets = document.getElementById('spot').getElementsByTagName('li');
+			var banner = Swipe(document.getElementById('banner'), {
+				auto: 4000,
+				continuous: true,
+				disableScroll:false,
+				callback: function(pos) {
+					var i = bullets.length;
+					pos = pos % i;
+					while (i--) {
+						bullets[i].className = ' ';
+					}
+					bullets[pos].className = 'active';
+				}
+			})
+	})
+</script>
