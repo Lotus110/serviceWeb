@@ -1,27 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <ul>
-    <li><a href="./login.html">登录页面</a></li>
-    <li><a href="./collect.html">收藏夹</a></li>
-    <li><a href="./shopping-cart.html">购物车</a></li>
-    <li><a href="./my.html">我的</a></li>
-    <li><a href="./logistics-details.html">物流详情</a></li>
-    <li><a href="./complaint.html">投诉</a></li>
-    <li><a href="./comment.html">评价</a></li>
-    <li><a href="./submit-order.html">提交订单</a></li>
-    <li><a href="./cn_index.html">首页</a></li>
-    <li><a href="./add-property.html">添加商砼属性</a></li>
-    <li><a href="./edit-property.html">购物车修改砼属性</a></li>
-    <li><a href="./my-examine.html">审核中</a></li>
-    <li><a href="./my-evaluation.html">待评价</a></li>
-    <li><a href="./my-had-evaluation.html">已评价</a></li>
-  </ul>
-</body>
+<html>
+	<head> 
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<title>奶牛监测</title>
+		<link rel="stylesheet" type="text/css" href="../css/api.css"/>
+		<style>
+			body {
+				height: 100%;
+				background: url(./image/background.png) no-repeat;
+			    background-size: cover;
+			    position: absolute;
+			    left: 0;
+			    top: 0;
+			    width: 100%;
+			    margin:0;
+			}
+			div img {
+				border: none;
+			}
+			.tittle {
+				margin: 0 auto; /* 居中 这个是必须的，，其它的属性非必须 */
+				text-align: center; /* 文字等内容居中 */
+				/*position: relative;*/
+				/*top: 100PX;*/
+			}
+			.tittle_logo {
+				position: relative;
+				margin: 0 auto;
+				top: 0px;
+				background: url(./image/logo.png) no-repeat center;
+				height: 130px;
+				width: 130px;
+				background-size: cover;
+				border: none;
+				margin-top: 30px;
+			}
+			.tittle_Word {
+				position: relative;
+				top: 5px;
+				text-align: center;
+				font-size: 30px;
+				color: #005FB1;
+				font-weight:bold; /*字体加粗*/
+			}
+			.tittle_Word2 {
+				position: relative;
+				top: 10px;
+				text-align: center;
+				font-size: 20px;
+			}
+			.btn_position {
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 80px;
+				width: 80%;
+			}
+			.btn1 {
+				/*margin: 3px 0px 0px 0px;*/
+				width: 100%;
+				background: #777777;
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+				font-size: 20px;
+				margin-top: 10px;
+				margin-left: auto;
+				margin-right: auto;
+				border-radius: 50px;
+				color: #fff;
+				border: solid rgb(255,255,255) 5px;
+			}
+			.btn2 {
+				/*margin: 3px 0px 0px 40px;*/
+				background: #DA1A35;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				font-size: 20px;
+				margin-top: 50px;
+				margin-left: auto;
+				margin-right: auto;
+				border-radius: 5px;
+				color: #fff;
+				width: 70%;
+			}
+			.btn3 {
+				/*margin: 3px 0px 0px 40px;*/
+				background: #0083C1;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				font-size: 20px;
+				margin-top: 10px;
+				margin-left: auto;
+				margin-right: auto;
+				border-radius: 5px;
+				color: #fff;
+				width: 70%
+			}
+			.highlight {
+				opacity: 0.7;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tittle">
+			<div class="tittle_logo" ></div>
+			<div class="tittle_Word">
+				奶牛健康监护系统
+			</div>
+			<div class="tittle_Word2">
+				重庆对牛弹琴科技有限公司
+			</div>
+		</div>
+		<section class="btn_position">
+			<div class="btn1" tapmode="highlight" onclick="toList()" >
+				<div></div>
+				启用奶牛健康监护系统
+			</div>
+			<div class="btn2" tapmode="highlight" onclick="fnHelp()" >
+				寻求在线技术支持
+			</div>
+			<div class="btn3" tapmode="highlight" onclick="fnInfo()" >
+				关于我们
+			</div>
+		</section>
+	</body>
+<script type="text/javascript"> 
+    function toList() { 
+        api.openWin({
+            name: 'win_milk_cow_list',
+            url: './html/win_milk_cow_list.html',
+            bounces: false
+        });
+    }
+    apiready = function (){
+        api.setScreenOrientation({
+            orientation: 'portrait_up'
+        });
+	} 
+	function fnHelp() {
+		api.alert({
+			title : '联系方式',
+			msg : '邮箱：cqdntq@163.com',
+		}, function(ret, err) {
+
+		});
+	} 
+	function fnInfo() {
+		api.alert({
+			title : '重庆对牛弹琴科技有限公司',
+			msg : '致力打造专业畜牧业物联网系统',
+		}, function(ret, err) {
+
+		});
+	}
+</script>
 </html>
